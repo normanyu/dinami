@@ -9,9 +9,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(new_params)
+    @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to Dinami!"
+      sign_in @user
+      flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
       render 'new'
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
   end
   
   private 
-  def new_params
+  def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
   
