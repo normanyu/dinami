@@ -9,4 +9,10 @@ FactoryGirl.define do
       admin true
     end
   end
+  
+  factory :feedback do
+    content "Bold Daring"
+    giver_email "shirley@princeton.edu"
+    user
+  end
 end
