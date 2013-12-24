@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @feedbacks = User.find(params[:id]).feedbacks.paginate(page: params[:page])
   end
 
 

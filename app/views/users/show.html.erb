@@ -8,4 +8,13 @@
       </h1>
     </section>
   </aside>
+  <div class="span8">
+    <% if @user.feedbacks.any? %>
+      <h3>Feedback (<%= @user.feedbacks.count %>)</h3>
+      <ol class="feedbacks">
+        <%= render @user.feedbacks.paginate(page: params[:page]) %>
+      </ol>
+      <%= will_paginate @user.feedbacks.paginate(page: params[:page]) %>
+    <% end %>
+  </div>
 </div>
