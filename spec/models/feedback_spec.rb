@@ -26,4 +26,19 @@ describe Feedback do
     before { @feedback.giver_email = nil }
     it { should_not be_valid }
   end
+  
+  describe "when user_id is not present" do
+    before { @feedback.user_id = nil }
+    it { should_not be_valid }
+  end
+  
+  describe "with blank content" do
+    before { @feedback.content = ' ' }
+    it { should_not be_valid }
+  end 
+  
+  describe "with content that is too long" do
+    before { @feedback.content = "a" * 141 }
+    it { should_not be_valid }
+  end
 end
