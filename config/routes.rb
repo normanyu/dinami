@@ -1,6 +1,7 @@
 Dinami::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :feedbacks
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
@@ -8,6 +9,10 @@ Dinami::Application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/request_feedback', to: 'static_pages#request_feedback', via: 'get'
+  match '/give_feedback', to: 'static_pages#give_feedback', via: 'get'
+  match '/feedback', to: 'feedbacks#new',        via: 'get'
+  match '/feedback', to: 'feedbacks#create',    via: 'post'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

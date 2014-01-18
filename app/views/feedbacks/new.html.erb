@@ -1,0 +1,13 @@
+<% provide(:title, 'Post Feedback') %>
+<h1>Post Feedback</h1>
+<p>
+	<%= form_for(@feedback) do |f| %>
+	<%= render 'shared/feedback_error_messages' %>
+	<div class="field">
+		<%= f.text_area :content, placeholder: "Compose new feedback" %>
+		<%= f.text_area :giver_email, placeholder: "Your email" %>
+		<%= f.text_area :user_id, placeholder: "Reciever's user_id" %>
+	</div>
+	<%= f.submit "Post Feedback", class: "btn btn-large btn-primary" %>
+	<% end %>
+</p>

@@ -12,7 +12,7 @@ FactoryGirl.define do
   
   factory :feedback do
     content "Bold Daring"
-    giver_email "shirley@princeton.edu"
+    giver_email "shirley2@princeton.edu"
     user
   end
 end

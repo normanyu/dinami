@@ -1,0 +1,13 @@
+<% provide(:title, 'Request Feedback') %>
+<h1>Request Feedback</h1>
+<p>
+	Hi! Looks like you would like to request feedback!
+</p>
+
+<% if signed_in? %>
+<p>
+	Send this link to your friends to get feedback: <%= @feedback_url_for_user %>
+</p>
+<% else %>
+But you're not signed in. Please sign in, or create an account
+<% end %>

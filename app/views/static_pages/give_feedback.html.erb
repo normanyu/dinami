@@ -1,0 +1,21 @@
+<% provide(:title, 'Give Feedback') %>
+<h1>Give Feedback</h1>
+<% if !@fbk_provided %>
+<p> You must provide a feedback key! </p>
+
+<% else %>
+
+<% if @receiving_user %>
+<p>
+	Thanks for giving feedback for: <%=@receiving_user.name%>
+</p>
+<p>
+	Form goes here:
+</p>
+<% else %>
+<p>
+	Could not locate the user you are trying to give feedback to. Are you sure that you copied the link correctly?
+</p>
+
+<% end %>
+<% end %>
