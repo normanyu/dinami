@@ -7,11 +7,13 @@
         <%= @user.name %>
       </h1>
   	</section>
+	<% if current_user.id == @user.id %>
   	<section>
 	  <h2>
 		  <%= link_to "Request Feedback!", request_feedback_path, class: "btn btn-large btn-primary" %>
 	  </h2>
     </section>
+	<% end %>
   </aside>
   <div class="span8">
     <% if @user.feedbacks.any? %>
